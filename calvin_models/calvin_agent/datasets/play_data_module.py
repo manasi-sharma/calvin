@@ -98,6 +98,8 @@ class PlayDataModule(pl.LightningDataModule):
             self.modalities.append(key)
 
     def train_dataloader(self):
+        print("yo")
+        import pdb;pdb.set_trace()
         return {
             key: DataLoader(
                 dataset,
