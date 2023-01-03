@@ -190,6 +190,7 @@ class PlayLMP(pl.LightningModule):
             perceptual_emb = self.perceptual_encoder(
                 dataset_batch["rgb_obs"], dataset_batch["depth_obs"], dataset_batch["robot_obs"]
             )
+            import pdb;pdb.set_trace()
             latent_goal = (
                 self.visual_goal(perceptual_emb[:, -1])
                 if "vis" in self.modality_scope
