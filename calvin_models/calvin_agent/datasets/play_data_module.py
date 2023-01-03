@@ -103,7 +103,7 @@ class PlayDataModule(pl.LightningDataModule):
     def train_dataloader(self):
         #print("\n\n\n\n\nYOOOOOOOOOOOOO\n\n\n\n\n\n")
         #import pdb;pdb.set_trace()
-        return {
+        t_dl = {
             key: DataLoader(
                 dataset,
                 batch_size=dataset.batch_size,
@@ -112,6 +112,7 @@ class PlayDataModule(pl.LightningDataModule):
             )
             for key, dataset in self.train_datasets.items()
         }
+        return t_dl
 
     def val_dataloader(self):
         val_dataloaders = {
