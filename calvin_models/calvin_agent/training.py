@@ -59,7 +59,6 @@ def wrap_train(config_name):
         trainer = Trainer(**trainer_args)
 
         # Start training
-        import pdb;pdb.set_trace()
         trainer.fit(model, datamodule=datamodule)
 
     train()
