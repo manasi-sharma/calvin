@@ -22,7 +22,7 @@ class PlayDataModule(pl.LightningDataModule):
         self,
         datasets: DictConfig,
         root_data_dir: str = "data",
-        num_workers: int = 8,
+        num_workers: int = 2,
         transforms: DictConfig = DEFAULT_TRANSFORM,
         shuffle_val: bool = False,
         **kwargs: Dict,
