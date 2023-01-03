@@ -97,12 +97,11 @@ class PlayDataModule(pl.LightningDataModule):
             self.val_datasets[key] = val_dataset
             self.modalities.append(key)
 
-        import pdb;pdb.set_trace()
-        print("\n\n\n\n\nYOOOOOOOOOOOOO\n\n\n\n\n\n")
+        #import pdb;pdb.set_trace()
+        #print("\n\n\n\n\nYOOOOOOOOOOOOO\n\n\n\n\n\n")
 
     def train_dataloader(self):
         #print("\n\n\n\n\nYOOOOOOOOOOOOO\n\n\n\n\n\n")
-        #import pdb;pdb.set_trace()
         t_dl = {
             key: DataLoader(
                 dataset,
@@ -112,6 +111,7 @@ class PlayDataModule(pl.LightningDataModule):
             )
             for key, dataset in self.train_datasets.items()
         }
+        import pdb;pdb.set_trace()
         return t_dl
 
     def val_dataloader(self):
