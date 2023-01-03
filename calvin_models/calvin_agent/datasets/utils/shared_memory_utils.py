@@ -202,7 +202,7 @@ class SharedMemoryLoader:
             "sizes": sizes,
             "dtypes": dtypes,
         }
-        import pdb;pdb.set_trace()
+        #import pdb;pdb.set_trace()
         return result
 
     def _init_shmem(self, ep_start_end_ids: np.ndarray) -> Tuple[Dict, Dict, Dict, Dict, Optional[Dict]]:
@@ -261,7 +261,7 @@ class SharedMemoryLoader:
         # register signal handler for the case that shm data loading process gets interrupted.
         signal.signal(signal.SIGTERM, partial(delete_shm, shmem.keys()))
 
-        import pdb;pdb.set_trace()
+        #import pdb;pdb.set_trace()
         return shmem, shapes, sizes, dtypes, None
 
     def _zip_sequence(self, start_idx, end_idx, pbar=None):
